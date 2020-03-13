@@ -1,0 +1,20 @@
+@startuml
+
+[*] --> Index
+Index --> kurv
+Index --> Admin
+Index --> Login
+
+kurv --> Login
+kurv --> Orderbekraftelse
+kurv --> Index
+
+Login --> OpratKonto
+Login --> kurv
+Login --> Index
+Login --> Admin
+
+Admin --> ordere
+Admin --> KundeListe
+
+@enduml
