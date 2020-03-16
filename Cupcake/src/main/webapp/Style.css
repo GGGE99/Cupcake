@@ -1,0 +1,28 @@
+.navbar-default {
+    background-color: #3c1460;
+    border-color: #E7E7E7;
+}
+
+.nav.justify-content-center li a {
+    color: #FFFFFF;
+}
+
+.navbar-toggler-icon{
+    color: #FFFFFF;
+}
+
+.btn.btn-secondary.dropdown-toggle{
+    background-color: #FFFFFF;
+    color: black;
+    min-width: 100%;
+    margin-left: 0px;
+}
+
+.dropdown-menu {
+    min-width: 95%;
+    text-align: left;
+}
+
+.number-input {
+    border: 1px solid black;
+}

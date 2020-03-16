@@ -1,68 +1,60 @@
-<%-- 
-    Document   : index
-    Created on : Aug 22, 2017, 2:01:06 PM
-    Author     : kasper
+<%--
+  Created by IntelliJ IDEA.
+  User: marcg
+  Date: 16/03/2020
+  Time: 10.32
+  To change this template use File | Settings | File Templates.
 --%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<%@include file="Includes/Headers.inc"%>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome page</title>
-    </head>
-    <body>
-        <h1>Welcome to Sem 2</h1>
-        
-        <table>
-            <tr><td>Login</td>
-                <td>
-                    <form name="login" action="FrontController" method="POST">
-                        <input type="hidden" name="taget" value="login">
-                        Email:<br>
-                        <input type="text" name="email" value="someone@nowhere.com">
-                        <br>
-                        Password:<br>
-                        <input type="password" name="password" value="sesam">
-                        <br>
-                        <input type="submit" value="Submit">
-                    </form>
-                </td>
-                <td>Or Register</td>
-                <td>
-                    <form name="register" action="FrontController" method="POST">
-                        <input type="hidden" name="taget" value="register">
-                        Email:<br>
-                        <input type="text" name="email" value="someone@nowhere.com">
-                        <br>
-                        Password:<br>
-                        <input type="password" name="password1" value="sesam">
-                        <br>
-                        Retype Password:<br>
-                        <input type="password" name="password2" value="sesam">
-                        <br>
-                        <input type="submit" value="Submit">
-                    </form>
-                </td>
-            </tr>
-        </table>
+    <div class="text-center mb-4">
+        <h1>Velkommen ombord</h1>
+        <h3>Øens bedste cupcakes. Vælg og bestil her:</h3>
+    </div>
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-2">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Vælg bund
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Chocolate</a>
+                <a class="dropdown-item" href="#">Vanilla</a>
+                <a class="dropdown-item" href="#">Nutmeg</a>
+                <a class="dropdown-item" href="#">Pistacio</a>
+                <a class="dropdown-item" href="#">Almond</a>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Vælg topping
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Chocolate</a>
+                <a class="dropdown-item" href="#">Blueberry</a>
+                <a class="dropdown-item" href="#">Rasberry</a>
+                <a class="dropdown-item" href="#">Crispy</a>
+                <a class="dropdown-item" href="#">Strawberry</a>
+                <a class="dropdown-item" href="#">Rum/Rasin</a>
+                <a class="dropdown-item" href="#">Orange</a>
+                <a class="dropdown-item" href="#">Lemon</a>
+                <a class="dropdown-item" href="#">Cream Cheese</a>
+            </div>
+        </div>
+        <div class="col-lg-1">
+            <input class="form-control number-input" type="number" value="1" id="example-number-input">
+        </div>
 
+        <div class="text-center col-lg-1">
+            <button type="button" class="btn btn-primary btn-md btn-block">Add</button>
+        </div>
 
-<%--        Bare lige se I har en ide om hvad vi forslå I ikke gør ! det hedder scpript lets --%>
-<%--        <% String error = (String) request.getAttribute( "error");--%>
-<%--           if ( error != null) { --%>
-<%--               out.println("<H2>Error!!</h2>");--%>
-<%--               out.println(error);--%>
-<%--           }--%>
-<%--        %>--%>
+        <div class="col-lg-3"></div>
+    </div>
 
-        <c:if test = "${requestScope.error!= null}" >
-
-           <h2>Error ! </h2>
-            ${requestScope.error}
-
-        </c:if>
-    </body>
-</html>
+<%@include file="Includes/Footer.inc"%>
