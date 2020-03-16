@@ -10,6 +10,31 @@
 
 <%@include file="Includes/Headers.inc" %>
 
+<c:if test="${sessionScope.role == null}">
+<form class="form-inline my-2 my-lg-0" name="login" action="FrontController" method="post">
+    <input type="hidden" name="taget" value="login">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">@</span>
+        </div>
+        <input type="email" class="form-control mr-sm-2" placeholder="Username"
+               aria-label="Username" aria-describedby="basic-addon1" name="email">
+        <input type="password" class="form-control mr-sm-2" placeholder="Password"
+               aria-label="Password" name="password">
+        <input class="btn btn-success ml-1" type="submit" value="Submit">
+    </div>
+</form>
+</c:if>
+
+<a href="#"><img src="images/kurv.png" class="float-right inverted" width="15%"></a>
+<p><%out.println(Basket.getNumberOfCupecakes()); %></p>
+</div>
+</div>
+
+</nav>
+</div>
+<div class="col-lg-2"></div>
+</div>
 <div class="text-center mb-4">
     <h1>Velkommen ombord</h1>
     <h3>Øens bedste cupcakes. Vælg og bestil her:</h3>
@@ -60,11 +85,6 @@
 
 </form>
 
-<c:if test="${requestScope.role != null}">
-    asdasdasdasdasdasdas
-</c:if>
-
-${requestScope.role}
 
 
 <%@include file="Includes/Footer.inc" %>
