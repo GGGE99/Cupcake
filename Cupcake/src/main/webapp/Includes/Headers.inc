@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!doctype html>
 <html lang="en">
@@ -29,18 +31,22 @@
                 </button>
                 <div class="ml-auto">
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <form class="form-inline my-2 my-lg-0">
+
+                        <form class="form-inline my-2 my-lg-0" name="login" action="FrontController" method="post">
+                            <input type="hidden" name="taget" value="login">
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">@</span>
                                 </div>
                                 <input type="email" class="form-control mr-sm-2" placeholder="Username"
-                                       aria-label="Username" aria-describedby="basic-addon1">
+                                       aria-label="Username" aria-describedby="basic-addon1" name="email">
                                 <input type="password" class="form-control mr-sm-2" placeholder="Password"
-                                       aria-label="Password">
+                                       aria-label="Password" name="password">
                                 <input class="btn btn-success ml-1" type="submit" value="Submit">
                             </div>
                         </form>
+                        <a href="#"><img src="images/kurv.png" class="float-right inverted" width="15%"></a>
+                        <p><%out.println(Basket.getNumberOfCupecakes()); %></p>
                     </div>
                 </div>
             </nav>
