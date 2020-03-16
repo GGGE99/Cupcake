@@ -26,3 +26,7 @@
 .number-input {
     border: 1px solid black;
 }
+
+.inverted {
+    filter: invert(100%);
+}
