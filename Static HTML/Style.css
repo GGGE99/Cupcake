@@ -11,10 +11,6 @@
     color: #FFFFFF;
 }
 
-.pull-rigth {
-    float: right;
-}
-
 .btn.btn-secondary.dropdown-toggle{
     background-color: #FFFFFF;
     color: black;
@@ -23,6 +19,14 @@
 }
 
 .dropdown-menu {
-    min-width: 100%;
+    min-width: 95%;
     text-align: left;
+}
+
+.number-input {
+    border: 1px solid black;
+}
+
+.navbar-light {
+    color: #FFFFFF;
 }
