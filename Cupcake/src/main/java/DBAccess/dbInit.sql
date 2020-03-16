@@ -11,7 +11,7 @@ CREATE TABLE `users` (
   `email` varchar(90) NOT NULL,
   `password` varchar(45) NOT NULL,
   `role` varchar(20) NOT NULL DEFAULT 'customer',
-  money float NOT null,
+  money float NOT null DEFAULT 500.00,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
