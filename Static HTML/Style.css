@@ -7,6 +7,14 @@
     color: #FFFFFF;
 }
 
+.navbar-toggler-icon{
+    color: #FFFFFF;
+}
+
+.pull-rigth {
+    float: right;
+}
+
 .btn.btn-secondary.dropdown-toggle{
     background-color: #FFFFFF;
     color: black;
