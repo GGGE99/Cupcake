@@ -7,11 +7,11 @@
     color: #FFFFFF;
 }
 
-.navbar-toggler-icon{
+.navbar-toggler-icon {
     color: #FFFFFF;
 }
 
-.btn.btn-secondary.dropdown-toggle{
+.btn.btn-secondary.dropdown-toggle {
     background-color: #FFFFFF;
     color: black;
     min-width: 100%;
@@ -30,9 +30,11 @@
 select:required:invalid {
     color: gray;
 }
+
 option[value=""][disabled] {
     display: none;
 }
+
 option {
     color: black;
 }
@@ -41,12 +43,16 @@ option {
     filter: invert(100%);
 }
 
-p #cart{
+p #cart {
     background: #ff0000;
-    border-radius:50%;
-    padding: 0px 0px 0px 0px ;
+    border-radius: 50%;
+    padding: 0px 0px 0px 0px;
 }
 
 p {
     color: #FFFFFF;
+}
+
+.navbar-nav li:hover>.dropdown-menu {
+    display: block;
 }

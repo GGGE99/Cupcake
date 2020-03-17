@@ -18,22 +18,17 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-
         <img class="img-fluid" src="images/Untitled.png" width="100%">
-
         <div class="col-lg-2"></div>
-        <div class="col-lg-8 navbar-default">
+        <div class="col-lg-8 navbar-default" id="navbarResponsive">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="#"><img src="images/cupcake.png" width="30%"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="ml-auto">
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-
-
                         <c:if test="${sessionScope.role == null}">
                             <form class="form-inline my-2 my-lg-0" name="login" action="FrontController" method="post">
                                 <input type="hidden" name="taget" value="login">
@@ -49,7 +44,6 @@
                                 </div>
                             </form>
                         </c:if>
-
                         <c:if test="${sessionScope.role != null}">
                             <p>${sessionScope.email}</p>
                             <form class="form-inline my-2 my-lg-0" name="logout" action="FrontController" method="post">
@@ -66,26 +60,37 @@
                         </c:if>
 
 
-                        <div class="dropdown">
-                            <button class="dropbtn"><a href="#">
-                                    <img src="images/kurv.png" class="float-right inverted" width="15%"></a>
-                            </button>
-                            <p id="cart"><%out.println(Basket.getNumberOfCupecakes()); %></p>
-                            <div class="dropdown-content">
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
-                            </div>
+                        <div style="height: 35px; width: 35px" class="ml-2">
+                            <ul class="navbar-nav float-right">
+                                <li class="nav-item dropdown">
+                                    <a href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false">
+                                        <img src="images/kurv.png" class="float-right inverted" style=" max-width: 100%; max-height: 100%;">
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="#">A</a>
+                                        <a class="dropdown-item" href="#">B</a>
+                                        <a class="dropdown-item" href="#">C</a>
+                                        <a class="dropdown-item" href="#">D</a>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-
-
                     </div>
+
+                    <!--                        <div class="dropdown m-0">-->
+                    <!---->
+                    <!--                            <p id="cart"><%out.println(Basket.getNumberOfCupecakes()); %></p>-->
+                    <!--                            <div class="dropdown-content">-->
+                    <!--                                <a href="#">Link 1</a>-->
+                    <!--                                <a href="#">Link 2</a>-->
+                    <!--                                <a href="#">Link 3</a>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
                 </div>
-
-            </nav>
         </div>
-
-
-        <div class="col-lg-2"></div>
+        </nav>
     </div>
+    <div class="col-lg-2"></div>
+</div>
 
