@@ -41,9 +41,12 @@ option {
     filter: invert(100%);
 }
 
-p {
-    color: #FFFFFF;
+p #cart{
     background: #ff0000;
     border-radius:50%;
     padding: 0px 0px 0px 0px ;
+}
+
+p {
+    color: #FFFFFF;
 }
