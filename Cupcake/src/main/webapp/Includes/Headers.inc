@@ -60,33 +60,27 @@
                         </c:if>
 
 
-                        <div style="height: 35px; width: 35px" class="ml-2">
+                        <div style="height: 35px; width: 35px;" class="ml-2">
                             <ul class="navbar-nav float-right">
                                 <li class="nav-item dropdown">
                                     <a href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
                                        aria-haspopup="true" aria-expanded="false">
-                                        <img src="images/kurv.png" class="float-right inverted" style=" max-width: 100%; max-height: 100%;">
+                                        <img src="images/kurv.png" class="float-right inverted"
+                                             style=" max-width: 100%; max-height: 100%;">
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="#">A</a>
-                                        <a class="dropdown-item" href="#">B</a>
-                                        <a class="dropdown-item" href="#">C</a>
-                                        <a class="dropdown-item" href="#">D</a>
+                                        <c:forEach var="i" items="${sessionScope.Basket}">
+                                            <a class="dropdown-item" href="#">Bottom: ${i.bottom} Top: ${i.top} Antal:
+                                                ${i.antal}</a>
+                                        </c:forEach>
                                     </div>
                                 </li>
                             </ul>
                         </div>
+                        <p id="cart"><%out.println(Basket.getNumberOfCupecakes()); %></p>
                     </div>
 
-                    <!--                        <div class="dropdown m-0">-->
-                    <!---->
-                    <!--                            <p id="cart"><%out.println(Basket.getNumberOfCupecakes()); %></p>-->
-                    <!--                            <div class="dropdown-content">-->
-                    <!--                                <a href="#">Link 1</a>-->
-                    <!--                                <a href="#">Link 2</a>-->
-                    <!--                                <a href="#">Link 3</a>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
+
                 </div>
         </div>
         </nav>
