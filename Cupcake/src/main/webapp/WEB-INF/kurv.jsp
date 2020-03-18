@@ -10,6 +10,9 @@
 
 <%@include file="/Includes/Headers.inc" %>
 
+<head>
+
+</head>
 
 <div class="text-center mb-4">
     <h1>Din kurv</h1>
