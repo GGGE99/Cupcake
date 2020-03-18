@@ -1,6 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -51,7 +48,7 @@
                                 <input class="btn btn-danger ml-1" type="submit" value="logout">
                             </form>
                             <c:if test="${sessionScope.role.equals('employee')}">
-                                <form class="form-inline my-2 my-lg-0" name="admin" action="FrontController"
+                                <form class="form-inline my-2 my-lg-0" name="oversigt" action="FrontController"
                                       method="post">
                                     <input type="hidden" name="taget" value="oversigt">
                                     <input class="btn btn-success ml-1" type="submit" value="Admin">
@@ -73,14 +70,19 @@
                                             <a class="dropdown-item" href="#">Bottom: ${i.bottom} Top: ${i.top} Antal:
                                                 ${i.antal}</a>
                                         </c:forEach>
+
+                                        <form class="form-inline my-2 my-lg-0" name="bestilling" action="FrontController"
+                                              method="post">
+                                            <input type="hidden" name="taget" value="bestilling">
+                                            <input class="btn btn-success ml-1" type="submit" value="Gå til bestilling">
+                                        </form>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                         <p id="cart"><%out.println(Basket.getNumberOfCupecakes()); %></p>
+
                     </div>
-
-
                 </div>
         </div>
         </nav>
