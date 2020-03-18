@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="PresentationLayer.Basket" %>
 <%--
   Created by IntelliJ IDEA.
   User: Marcus
@@ -8,7 +9,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/Includes/Headers.inc"%>
-<div>
+<div class="container">
     <table class="table">
         <thead class="thead-dark">
         <tr>

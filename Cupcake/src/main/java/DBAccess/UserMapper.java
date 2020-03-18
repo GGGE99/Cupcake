@@ -46,7 +46,7 @@ public class UserMapper {
             if ( rs.next() ) {
                 String role = rs.getString( "role" );
                 int id = rs.getInt( "id" );
-                User user = new User( email, password, role );
+                User user = new User( email, password, role, 500 );
                 user.setId( id );
                 return user;
             } else {
@@ -68,8 +68,8 @@ public class UserMapper {
                 String email = rs.getString("email");
                 String password = rs.getString("password");
                 String role = rs.getString("role");
-                String money = rs.getString("money");
-                User user = new User(email, password, role);
+                int money = rs.getInt("money");
+                User user = new User(email, password, role, money);
                 userList.add(user);
             }
         } catch (ClassNotFoundException | SQLException ex) {
