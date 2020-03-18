@@ -15,7 +15,7 @@ abstract class Command {
         commands.put( "register", new Register() );
         commands.put( "addToBasket", new Basket() );
         commands.put( "oversigt", new Oversigt());
-        commands.put( "bestilling", new Oversigt());
+        commands.put( "bestilling", new Bestilling());
         commands.put( "logout", new Logout());
 
     }
@@ -28,7 +28,7 @@ abstract class Command {
         return commands.getOrDefault(TagetName, new UnknownCommand() );   // unknowncommand er default.
     }
 
-    abstract String execute( HttpServletRequest request, HttpServletResponse response ) 
+    abstract String execute( HttpServletRequest request, HttpServletResponse response )
             throws LoginSampleException;
 
 }
