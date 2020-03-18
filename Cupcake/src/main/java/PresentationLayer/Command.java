@@ -15,6 +15,8 @@ abstract class Command {
         commands.put( "register", new Register() );
         commands.put( "addToBasket", new Basket() );
         commands.put( "oversigt", new Oversigt());
+        commands.put( "bestilling", new Oversigt());
+        commands.put( "logout", new Logout());
 
     }
 
