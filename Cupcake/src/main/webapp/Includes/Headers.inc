@@ -53,7 +53,7 @@
                             <c:if test="${sessionScope.role.equals('employee')}">
                                 <form class="form-inline my-2 my-lg-0" name="admin" action="FrontController"
                                       method="post">
-                                    <input type="hidden" name="taget" value="admin">
+                                    <input type="hidden" name="taget" value="oversigt">
                                     <input class="btn btn-success ml-1" type="submit" value="Admin">
                                 </form>
                             </c:if>
