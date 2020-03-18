@@ -12,6 +12,18 @@ public class CupcakeOrder {
         this.antal = antal;
     }
 
+    public String getBottom() {
+        return bottom;
+    }
+
+    public int getAntal() {
+        return antal;
+    }
+
+    public String getTop() {
+        return top;
+    }
+
     @Override
     public String toString() {
         return "Cupcake{" +
