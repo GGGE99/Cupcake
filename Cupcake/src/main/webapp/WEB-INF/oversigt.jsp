@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<<<<<<< HEAD
+
 <%@ page import="PresentationLayer.Basket" %>
 <%--
   Created by IntelliJ IDEA.
@@ -8,8 +8,6 @@
   Time: 10.37
   To change this template use File | Settings | File Templates.
 --%>
-=======
->>>>>>> d167c6bac5928a95fd00f189a486ae3d0e3fc726
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="PresentationLayer.Basket" %>
 
@@ -27,8 +25,13 @@
         </thead>
         <tbody>
         <c:forEach var="i" items="${sessionScope.users}">
-            ${i}
-            <br>
+            <tr>
+                <th> ${i.id}</th>
+                <th> ${i.email}</th>
+                <th> ${i.password}</th>
+                <th> ${i.role}</th>
+                <th> ${i.money}</th>
+             </tr>
         </c:forEach>
         </tbody>
     </table>
