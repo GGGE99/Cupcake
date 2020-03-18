@@ -23,14 +23,11 @@ public class Login extends Command {
         User user = LogicFacade.login( email, password );
 
         HttpSession session = request.getSession();
-
-        session.setAttribute( "user", user );
-        session.setAttribute( "role", user.getRole() );
-        session.setAttribute("email", email);  // ellers skal man skrive  user.email på jsp siderne og det er sgu lidt mærkeligt at man har adgang til private felter. Men måske er det meget fedt , jeg ved det ikke
-
-        System.out.println(session.getAttribute("role"));
-
-
+        if (user != null) {
+            session.setAttribute("user", user);
+            session.setAttribute("role", user.getRole());
+            session.setAttribute("email", email);  // ellers skal man skrive  user.email på jsp siderne og det er sgu lidt mærkeligt at man har adgang til private felter. Men måske er det meget fedt , jeg ved det ikke
+        }
         return "../index";
     }
 
