@@ -10,24 +10,26 @@ import java.sql.*;
 
 public class DataMapper {
 
-    public static ArrayList retriveToppings() throws LoginSampleException{
+    public static ArrayList<Top> retriveToppings() throws LoginSampleException{
+
         try {
-            Connection con = Connector.connection();
-            String SQL = "SELECT id, name, price FROM toppings ";
-            PreparedStatement preparedStatement = con.prepareStatement(SQL);
-            ResultSet rs = preparedStatement.executeQuery();
             ArrayList<Top> toppings = new ArrayList<>();
-            if (rs.next()) {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM cupcake.topings ";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
                 Double price = rs.getDouble("price");
                 Top top = new Top(id, name, price);
                 toppings.add(top);
-                preparedStatement.close();
+                System.out.println(top.getName());
             }
             return toppings;
         } catch ( SQLException | ClassNotFoundException ex ) {
-            throw new LoginSampleException( ex.getMessage() );
+            return null;
         }
     }
 
@@ -49,6 +51,12 @@ public class DataMapper {
             return bottoms;
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new LoginSampleException( ex.getMessage() );
+        }
+    }
+
+    public static void test () throws LoginSampleException {
+        for(Top top: retriveToppings()){
+            System.out.println("<p>" + top.getName() + "</p>");
         }
     }
 
