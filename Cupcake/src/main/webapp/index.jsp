@@ -1,4 +1,6 @@
-<%@ page import="PresentationLayer.Basket" %><%--
+<%@ page import="PresentationLayer.Basket" %>
+<%@ page import="DBAccess.DataMapper" %>
+<%@ page import="Util.Top" %><%--
   Created by IntelliJ IDEA.
   User: marcg
   Date: 16/03/2020
@@ -35,15 +37,13 @@
         <div class="form-group col-lg-2">
             <select required class="form-control number-input" id="sel2" name="top">
                 <option value="" disabled selected>Vælg top</option>
-                <option>Chocolate</option>
-                <option>Rasberry</option>
-                <option>Blueberry</option>
-                <option>Crispy</option>
-                <option>Strawberry</option>
-                <option>Rum/Rasin</option>
-                <option>Orange</option>
-                <option>Lemon</option>
-                <option>Cream</option>
+                <c:forEach var="i" items="${DataMapper.retriveToppings()}">
+                <option>
+                    ${i.getName()}
+                </option>
+                </c:forEach>
+
+
             </select>
         </div>
 
@@ -60,8 +60,6 @@
     </div>
 
 </form>
-
-
 
 
 <%@include file="Includes/Footer.inc" %>
