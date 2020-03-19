@@ -33,7 +33,7 @@ public class UserMapper {
             throw new LoginSampleException( ex.getMessage() );
         }
     }
-//ad
+    //ad
     public static User login( String email, String password ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
@@ -53,7 +53,9 @@ public class UserMapper {
                 return null;
             }
         } catch ( ClassNotFoundException | SQLException ex ) {
-            return null;
+            User user =  new User( null, null, "ukendtMail", 0 );
+            System.out.println(user.getRole());
+            return user;
         }
     }
 

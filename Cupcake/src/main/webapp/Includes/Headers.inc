@@ -41,7 +41,7 @@
                                 </div>
                             </form>
                         </c:if>
-                        <c:if test="${sessionScope.role != null}">
+                        <c:if test="${sessionScope.role != null && sessionScope.role != 'ukendtMail'}">
                             <p>${sessionScope.email}</p>
                             <form class="form-inline my-2 my-lg-0" name="logout" action="FrontController" method="post">
                                 <input type="hidden" name="taget" value="logout">

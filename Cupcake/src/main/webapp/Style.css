@@ -57,3 +57,16 @@ p {
     display: block;
 }
 
+#Opret {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    height: 80%;
+    width: 40%;
+    z-index: 99;
+}
+
+#Opret input {
+    margin-bottom: 10%;
+}
+
