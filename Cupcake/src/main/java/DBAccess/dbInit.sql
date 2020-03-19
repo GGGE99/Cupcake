@@ -4,17 +4,17 @@
 
 CREATE DATABASE  IF NOT EXISTS `Cupcake`;
 USE `Cupcake`;
-
+SET GLOBAL time_zone = '+1:00';
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(90) NOT NULL,
   `password` varchar(45) NOT NULL,
   `role` varchar(20) NOT NULL DEFAULT 'customer',
-  money float NOT null DEFAULT 500.00,
+  money float NOT null,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `topings`;
 CREATE TABLE `topings` (
@@ -23,7 +23,7 @@ CREATE TABLE `topings` (
   price float NOT null,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `bottom`;
 CREATE TABLE `bottom` (
@@ -32,7 +32,7 @@ CREATE TABLE `bottom` (
   price float NOT null,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
@@ -43,7 +43,7 @@ CREATE TABLE `order` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   foreign key (user_id) references  users(id)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `Cupcakes`;
 CREATE TABLE `Cupcakes` (
@@ -57,14 +57,29 @@ CREATE TABLE `Cupcakes` (
 
 
 
+INSERT INTO bottom (name, price) VALUES
+('Chocolate', 5),
+('Vanilla', 5),
+('Nutmeg', 5),
+('Pistacio', 6),
+('Almons', 6);
+
+INSERT INTO topings (name, price) VALUES
+('Chocolate',5),
+('Blueberry',5),
+('Rasberry',5),
+('Crispy',6),
+('Strawberry',6),
+('Rum/Raisin',7),
+('Orange',8),
+('Lemon',8),
+('Cream Cheese',9);
 
 INSERT INTO `users` VALUES
 (1,'jens@somewhere.com','jensen','customer', 500),
 (2,'ken@somewhere.com','kensen','customer' , 500),
-(3,'robin@somewhere.com','batman','employee', 500);
+(3,'robin@somewhere.com','batmanorder','employee', 500);
 
-
-
-
+INSERT INTO `order` VALUES(null,1,10, false);
 
 
