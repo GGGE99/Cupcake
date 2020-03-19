@@ -15,6 +15,7 @@
     </option>
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 =======
 <<<<<<< HEAD
@@ -29,6 +30,9 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
 >>>>>>> f5665ebf107dc59779cc7e91752372ba47109864
 >>>>>>> eac4f851a1d34ec358eaba2fee549791cccdd92b
+>>>>>>> master
+=======
+  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK">
 >>>>>>> master
     <output url="file://$PROJECT_DIR$/out" />
   </component>
