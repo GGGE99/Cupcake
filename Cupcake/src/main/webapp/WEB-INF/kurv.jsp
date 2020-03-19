@@ -32,27 +32,15 @@
             </tr>
             </thead>
             <tbody>
+            <c:forEach var="i" items="${sessionScope.Basket}">
             <tr>
                 <th scope="row">1</th>
-                <td>Choclate</td>
-                <td>Choclate</td>
-                <td><input class="form-control number-input"  type="number" value="1" id="example-number-input" name="number"></td>
+                <td>${i.top}</td>
+                <td>${i.bottom}</td>
+                <td><input class="form-control number-input"  type="number" value="${i.antal}" id="example-number-input" name="number"></td>
                 <td><button class="button">Slet</button></td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Cream cheese</td>
-                <td>Pistace</td>
-                <td><input class="form-control number-input"  type="number" value="1" id="example-number-input" name="number"></td>
-                <td><button class="button">Slet</button></td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Rasberry</td>
-                <td>Vanilla</td>
-                <td><input class="form-control number-input"  type="number" value="1" id="example-number-input" name="number"></td>
-                <td><button class="button">Slet</button></td>
-            </tr>
+            </c:forEach>
             </tbody>
 
         </table>
