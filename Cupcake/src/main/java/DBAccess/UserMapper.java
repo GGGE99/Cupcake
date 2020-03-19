@@ -33,7 +33,7 @@ public class UserMapper {
             throw new LoginSampleException( ex.getMessage() );
         }
     }
-
+//ad
     public static User login( String email, String password ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
