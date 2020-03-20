@@ -78,7 +78,7 @@ INSERT INTO topings (name, price) VALUES
 INSERT INTO `users` VALUES
 (1,'jens@somewhere.com','jensen','customer', 500),
 (2,'ken@somewhere.com','kensen','customer' , 500),
-(3,'robin@somewhere.com','batmanorder','employee', 500);
+(3,'robin@somewhere.com','batman','employee', 500);
 
 INSERT INTO `order` VALUES(null,1,10, false);
 

@@ -62,34 +62,7 @@
 </form>
 
 
-<c:if test="${sessionScope.role.equals('ukendtMail')}">
-<div class="col-lg-3"></div>
-<div id="Opret" class="jumbotron col-lg-6">
-    <div class="text-center mb-5">
-        <h1>Vi kunne ikke finde mailen men du kan oprette dig her</h1>
-    </div>
 
-    <form class="form-inline my-2 my-lg-0" name="opretBruger" action="FrontController" method="post">
-        <input type="hidden" name="taget" value="opretBruger">
-
-        <input type="email" class="form-control mr-sm-2 col-12" placeholder="Username"
-               aria-label="Username" aria-describedby="basic-addon1" name="email">
-
-
-        <input type="password" class="form-control mr-sm-2 col-12" placeholder="Password"
-               aria-label="Password" name="password1">
-
-        <input type="password" class="form-control mr-sm-2 col-12" placeholder="Password"
-               aria-label="Password" name="password2">
-
-        <div class="text-center col-12">
-            <input class="btn btn-success ml-1" type="submit" name="submit" value="Opret" style="width: 15%">
-            <input class="btn btn-danger ml-1" type="submit" name="submit" value="Exit" style="width: 15%">
-        </div>
-    </form>
-</div>
-<div class="col-lg-3"></div>
-</c:if>
 
 
 <%@include file="Includes/Footer.inc" %>

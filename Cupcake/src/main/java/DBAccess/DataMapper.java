@@ -53,11 +53,6 @@ public class DataMapper {
         }
     }
 
-    public static void test () throws LoginSampleException {
-        for(Top top: retriveToppings()){
-            System.out.println("<p>" + top.getName() + "</p>");
-        }
-    }
 
                                       
 }
