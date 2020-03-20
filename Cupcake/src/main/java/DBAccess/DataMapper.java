@@ -25,7 +25,6 @@ public class DataMapper {
                 Double price = rs.getDouble("price");
                 Top top = new Top(id, name, price);
                 toppings.add(top);
-                System.out.println(top.getName());
             }
             return toppings;
         } catch ( SQLException | ClassNotFoundException ex ) {
