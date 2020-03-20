@@ -1,9 +1,10 @@
 package PresentationLayer;
 
 import FunctionLayer.LoginSampleException;
-import java.util.HashMap;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
 
 abstract class Command {
 
@@ -17,6 +18,7 @@ abstract class Command {
         commands.put( "oversigt", new Oversigt());
         commands.put( "bestilling", new Bestilling());
         commands.put( "logout", new Logout());
+        commands.put( "opretBruger", new OpretBruger());
 
     }
 
