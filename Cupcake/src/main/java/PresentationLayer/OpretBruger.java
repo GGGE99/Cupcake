@@ -22,6 +22,7 @@ public class OpretBruger extends Command {
             if (password1.equals(password2)) {
                 User user = new User(email, password1, "customer", 500);
                 DBAccess.UserMapper.createUser(user);
+                System.out.println("heh");
             }
         }
 

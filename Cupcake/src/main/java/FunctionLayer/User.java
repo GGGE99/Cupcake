@@ -7,7 +7,7 @@ package FunctionLayer;
  */
 public class User {
 
-    public User(String email, String password, String role, int money) {
+    public User(String email, String password, String role, double money) {
         this.email = email;
         this.password = password;
         this.role = role;
@@ -19,7 +19,7 @@ public class User {
     private String email;
     private String password; // Should be hashed and secured
     private String role;
-    private int money;
+    private double money;
 
     public String getEmail() {
         return email;
@@ -58,7 +58,7 @@ public class User {
         this.money = money;
     }
 
-    public int getMoney() {
+    public double getMoney() {
         return money;
     }
 
