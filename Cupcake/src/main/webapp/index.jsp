@@ -26,18 +26,18 @@
         <div class="form-group col-lg-2">
             <select required class="form-control number-input" id="sel1" name="bottom">
                 <option value="" disabled selected>Vælg bund</option>
-                <option>Chocolate</option>
-                <option>Vanilla</option>
-                <option>Nutmeg</option>
-                <option>Pistacio</option>
-                <option>Almond</option>
+                <c:forEach var="i" items="${DataMapper.retrieveBottoms()}">
+                    <option>
+                            ${i.getName()}
+                    </option>
+                </c:forEach>
             </select>
         </div>
 
         <div class="form-group col-lg-2">
             <select required class="form-control number-input" id="sel2" name="top">
                 <option value="" disabled selected>Vælg top</option>
-                <c:forEach var="i" items="${DataMapper.retriveToppings()}">
+                <c:forEach var="i" items="${DataMapper.retrieveToppings()}">
                     <option>
                             ${i.getName()}
                     </option>
