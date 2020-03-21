@@ -11,11 +11,11 @@ import java.sql.*;
 
 public class DataMapper {
 
-    public static ArrayList<Top> retriveToppings() throws LoginSampleException {
+    public static ArrayList<Top> retrieveToppings() throws LoginSampleException {
 
         try {
             ArrayList<Top> toppings = new ArrayList<>();
-            Connection con = Connector.connection();
+            Connection con = Connector.connection();        
             String SQL = "SELECT * FROM cupcake.topings ";
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
@@ -66,7 +66,7 @@ public class DataMapper {
             PreparedStatement preparedStatement = con.prepareStatement(SQL);
             ResultSet rs = preparedStatement.executeQuery();
             ArrayList<Order> orders = new ArrayList<>();
-            if (rs.next()) {
+            while (rs.next()) {
                 int id = rs.getInt("int");
                 String email = rs.getString("email");
                 String top = rs.getString("top");
