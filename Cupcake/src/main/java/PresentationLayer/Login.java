@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
  */
 public class Login extends Command {
 
+
     @Override
     String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException {
         String email = request.getParameter( "email" );

@@ -43,4 +43,8 @@ public class Basket extends Command {
     public static int getNumberOfCupecakes() {
         return numberOfCupecakes;
     }
+    public static void updateNumberOfCupecakes(int antal) {
+        numberOfCupecakes -=antal ;
+    }
+
 }

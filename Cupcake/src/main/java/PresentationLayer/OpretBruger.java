@@ -5,6 +5,7 @@ import FunctionLayer.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class OpretBruger extends Command {
     @Override
@@ -15,6 +16,8 @@ public class OpretBruger extends Command {
         String password2 = request.getParameter("password2");
         String email = request.getParameter("email");
 
+        HttpSession session = request.getSession();
+
         if (submitVal.equals("Exit")) {
             Logout.logout(request, response);
         }
@@ -22,7 +25,9 @@ public class OpretBruger extends Command {
             if (password1.equals(password2)) {
                 User user = new User(email, password1, "customer", 500);
                 DBAccess.UserMapper.createUser(user);
-                System.out.println("heh");
+                session.setAttribute("user", user);
+                session.setAttribute("role", user.getRole());
+                session.setAttribute("email", email);
             }
         }
 

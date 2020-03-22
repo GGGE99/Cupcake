@@ -3,11 +3,7 @@ package DBAccess;
 import FunctionLayer.LoginSampleException;
 import FunctionLayer.User;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 /**
@@ -27,11 +23,11 @@ public class UserMapper {
             ps.setString(3, user.getRole());
             ps.setDouble(4, user.getMoney());
             ps.executeUpdate();
-            System.out.println("asdasdada");
             ResultSet ids = ps.getGeneratedKeys();
             ids.next();
             int id = ids.getInt(1);
             user.setId(id);
+
         } catch (SQLException | ClassNotFoundException ex) {
             throw new LoginSampleException(ex.getMessage());
         }
