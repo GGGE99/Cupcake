@@ -1,4 +1,4 @@
-.button {
+.button.kurv {
     padding: 15px 25px;
     font-size: 24px;
     text-align: center;
@@ -10,9 +10,9 @@
     border-radius: 15px;
 }
 
-.button:hover {background-color: #3e8e41}
+.button.kurv:hover {background-color: #3e8e41}
 
-.button:active {
+.button.kurv:active {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);

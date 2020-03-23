@@ -49,7 +49,7 @@
                         <form action="FrontController" method="post">
                             <input type="hidden" name="taget" value="removeItem">
                             <input type="hidden" name="index" value="${Count.index}">
-                            <button class="button" type="submit" onclick="">Slet</button>
+                            <button class="button kurv" type="submit">Slet</button>
                         </form>
                     </td>
                 </tr>
