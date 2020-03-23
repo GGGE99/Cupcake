@@ -16,4 +16,8 @@ public class Bottom {
     public String getName() {
         return name;
     }
+
+    public double getPrice() {
+        return price;
+    }
 }

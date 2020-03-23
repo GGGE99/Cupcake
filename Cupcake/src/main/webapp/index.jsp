@@ -28,8 +28,8 @@
         <div class="form-group col-lg-2">
             <select required class="form-control number-input" id="sel1" name="bottom">
                 <option value="" disabled selected>Vælg bund</option>
-                <c:forEach var="i" items="${DataMapper.retrieveBottoms()}">
-                    <option>
+                <c:forEach var="i" items="${DataMapper.retrieveBottoms()}" varStatus="Count">
+                    <option value="${Count.index}">
                             ${i.getName()}
                     </option>
                 </c:forEach>
@@ -39,8 +39,8 @@
         <div class="form-group col-lg-2">
             <select required class="form-control number-input" id="sel2" name="top">
                 <option value="" disabled selected>Vælg top</option>
-                <c:forEach var="i" items="${DataMapper.retrieveToppings()}">
-                    <option>
+                <c:forEach var="i" items="${DataMapper.retrieveToppings()}" varStatus="Count">
+                    <option value="${Count.index}">
                             ${i.getName()}
                     </option>
                 </c:forEach>

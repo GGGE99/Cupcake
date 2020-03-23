@@ -17,4 +17,12 @@ public class Top{
     public String getName() {
         return name;
     }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getId() {
+        return id;
+    }
 }

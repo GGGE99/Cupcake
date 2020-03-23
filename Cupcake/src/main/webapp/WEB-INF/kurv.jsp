@@ -1,4 +1,7 @@
-<%@ page import="PresentationLayer.Basket" %><%--
+<%@ page import="PresentationLayer.Basket" %>
+<%@ page import="DBAccess.DataMapper" %>
+
+<%--
   Created by IntelliJ IDEA.
   User: marcg
   Date: 16/03/2020
@@ -26,6 +29,7 @@
                 <th scope="col">Topping</th>
                 <th scope="col">Bund</th>
                 <th scope="col">Antal</th>
+                <th scope="col">Pris</th>
                 <th scope="col"></th>
 
             </tr>
@@ -34,10 +38,13 @@
             <c:forEach var="i" items="${sessionScope.Basket}" varStatus="Count">
                 <tr>
                     <th scope="row">${Count.index}</th>
-                    <td>${i.top}</td>
-                    <td>${i.bottom}</td>
+                    <td>${DataMapper.retrieveToppings().get(i.top).getName()}</td>
+                    <td>${DataMapper.retrieveBottoms().get(i.bottom).getName()}</td>
                     <td><input class="form-control number-input" type="number" value="${i.antal}"
                                id="example-number-input" name="number"></td>
+                    <td>
+                            ${(DataMapper.retrieveToppings().get(i.top).getPrice() + DataMapper.retrieveBottoms().get(i.bottom).getPrice()) * i.antal}
+                    </td>
                     <td>
                         <form action="FrontController" method="post">
                             <input type="hidden" name="taget" value="removeItem">
