@@ -34,8 +34,8 @@ CREATE TABLE `bottom` (
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS `order`;
-CREATE TABLE `order` (
+DROP TABLE IF EXISTS `ordrer`;
+CREATE TABLE `ordrer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `pris` float NOT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE `Cupcakes` (
   `order_id` int(11) NOT NULL,
   `top_id` int(11) NOT NULL,
   `bottom_id` INT(11) NOT NULL,
-  foreign key (order_id) references  `order`(id),
+  foreign key (order_id) references  `ordrer`(id),
   foreign key (top_id) references  topings(id),
   foreign key (bottom_id) references  bottom(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -80,6 +80,6 @@ INSERT INTO `users` VALUES
 (2,'ken@somewhere.com','kensen','customer' , 500),
 (3,'robin@somewhere.com','batman','employee', 500);
 
-INSERT INTO `order` VALUES(null,1,10, false);
+INSERT INTO `ordrer` VALUES(null,1,10, false);
 
 

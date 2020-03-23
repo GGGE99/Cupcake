@@ -15,7 +15,7 @@ public class DataMapper {
 
         try {
             ArrayList<Top> toppings = new ArrayList<>();
-            Connection con = Connector.connection();        
+            Connection con = Connector.connection();
             String SQL = "SELECT * FROM cupcake.topings ";
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
@@ -57,24 +57,23 @@ public class DataMapper {
     public static ArrayList<Order> GetAllOrders() throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT ordrer.id, users.email, topings.name, bottom.name, ordrer.pris " +
+            String SQL = "SELECT ordrer.id, users.email, topings.name as top, bottom.name as bottom, ordrer.pris " +
                     "From((((ordrer " +
                     "Inner join users on ordrer.user_id=users.id) " +
                     "inner join cupcakes on cupcakes.order_id=ordrer.id) " +
                     "inner join topings on Cupcakes.top_id=topings.id) " +
-                    "inner join bottom on Cupcakes.bottom_id=bottom.id);";
+                    "inner join bottom on Cupcakes.bottom_id=bottom.id)";
             PreparedStatement preparedStatement = con.prepareStatement(SQL);
             ResultSet rs = preparedStatement.executeQuery();
             ArrayList<Order> orders = new ArrayList<>();
             while (rs.next()) {
-                int id = rs.getInt("int");
+                int id = rs.getInt("id");
                 String email = rs.getString("email");
                 String top = rs.getString("top");
                 String bottom = rs.getString("bottom");
-                int total = rs.getInt("total");
+                int total = rs.getInt("pris");
                 Order order = new Order(id, email, top, bottom, total);
                 orders.add(order);
-                preparedStatement.close();
             }
             return orders;
         } catch (SQLException | ClassNotFoundException ex) {
