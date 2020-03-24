@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ page import="PresentationLayer.Basket" %>
+<%@ page import="DBAccess.UserMapper" %>
 <%--
   Created by IntelliJ IDEA.
   User: Marcus
@@ -14,8 +15,29 @@
 <%@include file="/Includes/Headers1.inc" %>
 <%@include file="/Includes/Headers.inc" %>
 
+
+<div class="row mt-4 text-center">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-2">
+        <input class="form-control" list="brow">
+        <datalist id="brow">
+            <c:forEach var="i" items="${UserMapper.GetAllUsers()}" varStatus="Count">
+            <option value="${i.getEmail()}">
+                </c:forEach>
+        </datalist>
+    </div>
+
+    <div class="col-lg-2">
+        <input class="form-control" type="number" value="100">
+    </div>
+
+    <div class="col-lg-2">
+        <button class="btn btn-success btn-block" type="submit">Ind Sæt penge</button>
+    </div>
+    <div class="col-lg-3"></div>
+
+</div>
 <div class="row">
-    <div class="col-lg-12 text-center mt-4"><button class="btn btn-success " type="submit">Ind Sæt penge</button></div>
     <div class="mt-3 col-lg-6">
         <table class="table">
             <thead class="thead-dark">
@@ -67,5 +89,29 @@
         </table>
     </div>
 </div>
+
+<script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    function filterFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("myDropdown");
+        a = div.getElementsByTagName("a");
+        for (i = 0; i < a.length; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+            } else {
+                a[i].style.display = "none";
+            }
+        }
+    }
+</script>
 
 <%@include file="/Includes/Footer.inc" %>
