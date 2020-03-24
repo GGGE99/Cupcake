@@ -121,3 +121,7 @@ p {
 
 .show {display: block;}
 
+datalist {
+    display: none;
+}
+

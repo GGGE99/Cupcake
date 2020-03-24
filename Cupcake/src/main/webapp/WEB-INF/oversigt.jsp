@@ -2,6 +2,7 @@
 
 <%@ page import="PresentationLayer.Basket" %>
 <%@ page import="DBAccess.UserMapper" %>
+<%@ page import="DBAccess.DataMapper" %>
 <%--
   Created by IntelliJ IDEA.
   User: Marcus
@@ -15,28 +16,31 @@
 <%@include file="/Includes/Headers1.inc" %>
 <%@include file="/Includes/Headers.inc" %>
 
+<form action="FrontController" method="post">
+    <div class="row mt-4 text-center">
 
-<div class="row mt-4 text-center">
-    <div class="col-lg-3"></div>
-    <div class="col-lg-2">
-        <input class="form-control" list="brow">
-        <datalist id="brow">
-            <c:forEach var="i" items="${UserMapper.GetAllUsers()}" varStatus="Count">
-            <option value="${i.getEmail()}">
-                </c:forEach>
-        </datalist>
+        <input type="hidden" name="taget" value="addMoney">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-2">
+            <input class="form-control" list="brow" name="email">
+            <datalist id="brow">
+                <c:forEach var="i" items="${UserMapper.GetAllUsers()}" varStatus="Count">
+                <option value="${i.getEmail()}">
+                    </c:forEach>
+            </datalist>
+        </div>
+
+        <div class="col-lg-2">
+            <input class="form-control" type="number" value="100" name="amount">
+        </div>
+
+        <div class="col-lg-2">
+            <button class="btn btn-success btn-block" type="submit">Ind Sæt penge</button>
+        </div>
+        <div class="col-lg-3"></div>
+
     </div>
-
-    <div class="col-lg-2">
-        <input class="form-control" type="number" value="100">
-    </div>
-
-    <div class="col-lg-2">
-        <button class="btn btn-success btn-block" type="submit">Ind Sæt penge</button>
-    </div>
-    <div class="col-lg-3"></div>
-
-</div>
+</form>
 <div class="row">
     <div class="mt-3 col-lg-6">
         <table class="table">
@@ -50,7 +54,7 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="v" items="${sessionScope.orders}">
+            <c:forEach var="v" items="${DataMapper.GetAllOrders()}">
                 <tr>
                     <th> ${v.id}</th>
                     <th> ${v.email}</th>
@@ -76,7 +80,7 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="i" items="${sessionScope.users}">
+            <c:forEach var="i" items="${UserMapper.GetAllUsers()}">
                 <tr>
                     <th> ${i.id}</th>
                     <th> ${i.email}</th>

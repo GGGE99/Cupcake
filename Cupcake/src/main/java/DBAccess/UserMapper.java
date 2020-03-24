@@ -84,4 +84,17 @@ public class UserMapper {
         return userList;
     }
 
+    public static void addMoney(double newSaldo, String email) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "UPDATE users SET money = money + ? WHERE email = ?; ";
+            PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
+            ps.setDouble(1, newSaldo);
+            ps.setString(2, email);
+            ps.executeUpdate();
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex);
+        }
+    }
+
 }
