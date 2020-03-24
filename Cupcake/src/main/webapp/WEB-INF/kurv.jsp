@@ -81,6 +81,10 @@
 <div class="col-lg-6>">
     <form action="FrontController" method="post">
         <input type="hidden" name="taget" value="bestil">
+        <c:forEach var="i" items="${sessionScope.Basket}" varStatus="Count">
+            ${Pris.samletPris(DataMapper.retrieveToppings().get(i.top).getPrice(), DataMapper.retrieveBottoms().get(i.bottom).getPrice(), i.antal)}
+        </c:forEach>
+        <input type="hidden" name="price" value="${Pris.getPris()}">
         <div class="text-center">
             <button class="btn btn-success " type="submit">Bestil</button>
         </div>
