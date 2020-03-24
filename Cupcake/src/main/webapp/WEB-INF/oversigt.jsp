@@ -15,7 +15,8 @@
 <%@include file="/Includes/Headers.inc" %>
 
 <div class="row">
-    <div class="mt-5 col-lg-6">
+    <div class="col-lg-12 text-center mt-4"><button class="btn btn-success " type="submit">Ind Sæt penge</button></div>
+    <div class="mt-3 col-lg-6">
         <table class="table">
             <thead class="thead-dark">
             <tr>
@@ -41,7 +42,7 @@
         </table>
     </div>
 
-    <div class="mt-5 col-lg-6">
+    <div class="mt-3 col-lg-6">
         <table class="table">
             <thead class="thead-dark">
             <tr>
