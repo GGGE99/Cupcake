@@ -33,7 +33,7 @@ public class DataMapper {
         }
     }
 
-    public static ArrayList retrieveBottoms() throws LoginSampleException {
+    public static ArrayList<Bottom> retrieveBottoms() throws LoginSampleException {
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT * FROM cupcake.bottom ";

@@ -1,3 +1,4 @@
+<%@ page import="PresentationLayer.Pris" %>
 <%@ page import="PresentationLayer.Basket" %>
 <%@ page import="DBAccess.DataMapper" %>
 
@@ -23,7 +24,7 @@
     <div class="col-lg-3"></div>
     <div class="col-lg-6">
         <table class="table">
-            <thead class="thead-light fluid">
+            <thead class="table table-hover fluid">
             <tr>
                 <th scope="col-">#</th>
                 <th scope="col">Topping</th>
@@ -54,13 +55,38 @@
                     </td>
                 </tr>
             </c:forEach>
+            <tr class="table-dark">
+                <th>I ALT:</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>
+                    <c:forEach var="i" items="${sessionScope.Basket}" varStatus="Count">
+                        ${Pris.samletPris(DataMapper.retrieveToppings().get(i.top).getPrice(), DataMapper.retrieveBottoms().get(i.bottom).getPrice(), i.antal)}
+                    </c:forEach>
+                    ${Pris.getPris()}
+                </th>
+                <th></th>
+            </tr>
             </tbody>
 
         </table>
 
     </div>
     <div class="col-lg-3"></div>
+
 </div>
+
+<div class="col-lg-3"></div>
+<div class="col-lg-6>">
+    <form action="FrontController" method="post">
+        <input type="hidden" name="taget" value="bestil">
+        <div class="text-center">
+            <button class="btn btn-success " type="submit">Bestil</button>
+        </div>
+    </form>
+</div>
+<div class="col-lg-3"></div>
 
 
 <%@include file="/Includes/Footer.inc" %>

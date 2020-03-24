@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Basket extends Command {
 
@@ -16,19 +15,29 @@ public class Basket extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
-        String bottom = request.getParameter("bottom");
-        String top = request.getParameter("top");
+        int bottom = Integer.parseInt(request.getParameter("bottom"));
+        int top = Integer.parseInt(request.getParameter("top"));
         int number = Integer.parseInt(request.getParameter("number"));
 
         HttpSession session = request.getSession();
 
-        List<CupcakeOrder> basket;
+        ArrayList<CupcakeOrder> basket;
         if (session.getAttribute("Basket") != null) {
             basket = (ArrayList<CupcakeOrder>) session.getAttribute("Basket");
         } else {
             basket = new ArrayList<>();
         }
         CupcakeOrder tempCake = new CupcakeOrder(top, bottom, number);
+        for(CupcakeOrder cupcakeOrder: basket){
+            if (cupcakeOrder.getBottom() == tempCake.getBottom() && cupcakeOrder.getTop() == tempCake.getTop()){
+                cupcakeOrder.setAntal(cupcakeOrder.getAntal() + tempCake.getAntal());
+                session.setAttribute("Basket", basket);
+
+                numberOfCupecakes += number;
+
+                return "../index";
+            }
+        }
         basket.add(tempCake);
 
 
@@ -36,7 +45,6 @@ public class Basket extends Command {
 
         numberOfCupecakes += number;
 
-        System.out.println(session.getAttribute("Basket"));
         return "../index";
     }
 
@@ -46,5 +54,7 @@ public class Basket extends Command {
     public static void updateNumberOfCupecakes(int antal) {
         numberOfCupecakes -=antal ;
     }
+
+
 
 }

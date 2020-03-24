@@ -2,17 +2,17 @@ package Util;
 
 public class CupcakeOrder {
 
-    private String top;
-    private String bottom;
+    private int top;
+    private int bottom;
     private int antal;
 
-    public CupcakeOrder(String top, String bottom, int antal) {
+    public CupcakeOrder(int top, int bottom, int antal) {
         this.top = top;
         this.bottom = bottom;
         this.antal = antal;
     }
 
-    public String getBottom() {
+    public int getBottom() {
         return bottom;
     }
 
@@ -20,8 +20,12 @@ public class CupcakeOrder {
         return antal;
     }
 
-    public String getTop() {
+    public int getTop() {
         return top;
+    }
+
+    public void setAntal(int antal) {
+        this.antal = antal;
     }
 
     @Override

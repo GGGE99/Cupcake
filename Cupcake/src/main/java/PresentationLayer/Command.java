@@ -20,6 +20,7 @@ abstract class Command {
         commands.put( "logout", new Logout());
         commands.put( "opretBruger", new OpretBruger());
         commands.put( "removeItem", new RemoveItem());
+        commands.put( "bestil", new Bestil());
 
     }
 
