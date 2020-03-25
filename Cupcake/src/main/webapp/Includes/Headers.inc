@@ -85,13 +85,14 @@
 <div id="Opret" class="jumbotron col-lg-6">
     <div class="text-center mb-5">
         <h1>Vi kunne ikke finde mailen men du kan oprette dig her</h1>
+        <p style="color: red"> ${requestScope.error} </p>
     </div>
 
-    <form class="form-inline my-2 my-lg-0" name="opretBruger" action="FrontController" method="post">
+    <form class="form-inline my-lg-0" name="opretBruger" action="FrontController" method="post">
         <input type="hidden" name="taget" value="opretBruger">
 
-        <input type="email" class="form-control mr-sm-2 col-12" placeholder="Username"
-               aria-label="Username" aria-describedby="basic-addon1" name="email">
+        <input type="email" class="form-control mr-sm-2 col-12" placeholder="email"
+               aria-label="Username" aria-describedby="basic-addon1" name="email" value="${sessionScope.email}">
 
 
         <input type="password" class="form-control mr-sm-2 col-12" placeholder="Password"

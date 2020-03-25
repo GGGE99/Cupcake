@@ -54,8 +54,8 @@ public class UserMapper {
                     return null;
                 }
             } else {
-                User user = new User(null, null, "ukendtMail", 0);
-                System.out.println("hej2");
+                User user = new User(email, null, "ukendtMail", 0);
+
                 return user;
             }
         } catch (ClassNotFoundException | SQLException ex) {

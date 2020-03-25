@@ -28,7 +28,7 @@ public class OpretBruger extends Command {
                 session.setAttribute("user", user);
                 session.setAttribute("role", user.getRole());
                 session.setAttribute("email", email);
-            }
+            } else request.setAttribute("error", "Koderne er ikke en prøv igen");
         }
 
         return "../index";
