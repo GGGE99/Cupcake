@@ -48,21 +48,30 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Email</th>
-                <th scope="col">Topping</th>
-                <th scope="col">Bottom</th>
-                <th scope="col">Total</th>
+                <th scope="col">Pris</th>
+                <th scope="col">Status</th>
+                <th scope="col" width="20%">Status</th>
             </tr>
             </thead>
             <tbody>
             <c:forEach var="v" items="${DataMapper.GetAllOrders()}">
-                <tr>
-                    <th> ${v.id}</th>
-                    <th> ${v.email}</th>
-                    <th> ${v.topping}</th>
-                    <th> ${v.bottom}</th>
-                    <th> ${v.total}</th>
-
+                <form id="form-id" action="FrontController" method="post">
+                    <input type="hidden" name="taget" value="seeOrder">
+                    <input type="hidden" name="id" value="${v.id}">
+                    <tr>
+                        <td onclick="document.getElementById('form-id').submit();"> ${v.id}</td>
+                        <td onclick="document.getElementById('form-id').submit();"> ${v.email}</td>
+                        <td onclick="document.getElementById('form-id').submit();"> ${v.pris}</td>
+                        <td onclick="document.getElementById('form-id').submit();"> ${v.status}</td>
+                </form>
+                <td>
+                    <div class="text-center">
+                        <button class="btn btn-success mr-1" type="#" style="max-width: 49%">penge</button>
+                        <button class="btn btn-danger mr-1" type="#" style="max-width: 49%">penge</button>
+                    </div>
+                </td>
                 </tr>
+
             </c:forEach>
             </tbody>
         </table>
@@ -82,11 +91,11 @@
             <tbody>
             <c:forEach var="i" items="${UserMapper.GetAllUsers()}">
                 <tr>
-                    <th> ${i.id}</th>
-                    <th> ${i.email}</th>
-                    <th> ${i.password}</th>
-                    <th> ${i.role}</th>
-                    <th> ${i.money}</th>
+                    <td> ${i.id}</td>
+                    <td> ${i.email}</td>
+                    <td> ${i.password}</td>
+                    <td> ${i.role}</td>
+                    <td> ${i.money}</td>
                 </tr>
             </c:forEach>
             </tbody>

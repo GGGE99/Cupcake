@@ -1,6 +1,6 @@
 package FunctionLayer;
 
-public class Order {
+public class OrderLine {
     private int id;
     private String email;
     private String topping;
@@ -8,7 +8,7 @@ public class Order {
     private double total;
     private int antal;
 
-    public Order(int id, String email, String topping, String bottom, double total, int antal) {
+    public OrderLine(int id, String email, String topping, String bottom, double total, int antal) {
         this.id = id;
         this.email = email;
         this.topping = topping;
