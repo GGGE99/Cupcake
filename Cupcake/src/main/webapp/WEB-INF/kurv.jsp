@@ -39,12 +39,12 @@
             <c:forEach var="i" items="${sessionScope.Basket}" varStatus="Count">
                 <tr>
                     <th scope="row">${Count.index}</th>
-                    <td>${DataMapper.retrieveToppings().get(i.top).getName()}</td>
-                    <td>${DataMapper.retrieveBottoms().get(i.bottom).getName()}</td>
+                    <td>${DataMapper.retrieveToppings().get(i.top - 1).getName()}</td>
+                    <td>${DataMapper.retrieveBottoms().get(i.bottom - 1).getName()}</td>
                     <td><input class="form-control number-input" type="number" value="${i.antal}"
                                id="example-number-input" name="number"></td>
                     <td>
-                            ${(DataMapper.retrieveToppings().get(i.top).getPrice() + DataMapper.retrieveBottoms().get(i.bottom).getPrice()) * i.antal}
+                            ${(DataMapper.retrieveToppings().get(i.top - 1).getPrice() + DataMapper.retrieveBottoms().get(i.bottom - 1).getPrice()) * i.antal}
                     </td>
                     <td>
                         <form action="FrontController" method="post">
@@ -62,7 +62,7 @@
                 <th></th>
                 <th>
                     <c:forEach var="i" items="${sessionScope.Basket}" varStatus="Count">
-                        ${Pris.samletPris(DataMapper.retrieveToppings().get(i.top).getPrice(), DataMapper.retrieveBottoms().get(i.bottom).getPrice(), i.antal)}
+                        ${Pris.samletPris(DataMapper.retrieveToppings().get(i.top - 1).getPrice(), DataMapper.retrieveBottoms().get(i.bottom - 1).getPrice(), i.antal)}
                     </c:forEach>
                     ${Pris.getPris()}
                 </th>
@@ -82,7 +82,7 @@
     <form action="FrontController" method="post">
         <input type="hidden" name="taget" value="bestil">
         <c:forEach var="i" items="${sessionScope.Basket}" varStatus="Count">
-            ${Pris.samletPris(DataMapper.retrieveToppings().get(i.top).getPrice(), DataMapper.retrieveBottoms().get(i.bottom).getPrice(), i.antal)}
+            ${Pris.samletPris(DataMapper.retrieveToppings().get(i.top - 1).getPrice(), DataMapper.retrieveBottoms().get(i.bottom - 1).getPrice(), i.antal)}
         </c:forEach>
         <input type="hidden" name="price" value="${Pris.getPris()}">
         <div class="text-center">

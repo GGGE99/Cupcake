@@ -28,7 +28,9 @@ public class Bestil extends Command {
                     OrderMapper.createOrdrerLine(orderId, cakes.getTop(), cakes.getBottom(), cakes.getAntal());
                 }
                 OrderMapper.updateMoney(money - price, userId);
+                Basket.updateNumberOfCupecakes(Basket.getNumberOfCupecakes());
                 session.removeAttribute("Basket");
+
             }
         }
         return "../index";

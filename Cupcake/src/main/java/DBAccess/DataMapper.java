@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class DataMapper {
@@ -81,6 +82,7 @@ public class DataMapper {
                 OrderLine orderLine = new OrderLine(id, email, top, bottom, total, antal);
                 orderLines.add(orderLine);
             }
+            Collections.reverse(orderLines);
             return orderLines;
         } catch (SQLException | ClassNotFoundException ex) {
             throw new LoginSampleException(ex.getMessage());

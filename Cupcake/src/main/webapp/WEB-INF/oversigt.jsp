@@ -55,28 +55,29 @@
             </thead>
             <tbody>
             <c:forEach var="v" items="${DataMapper.GetAllOrders()}">
-                <form id="form-id" action="FrontController" method="post">
+                <form id="${v.id}" action="FrontController" method="post">
                     <input type="hidden" name="taget" value="seeOrder">
                     <input type="hidden" name="id" value="${v.id}">
                     <tr>
-                        <td onclick="document.getElementById('form-id').submit();"> ${v.id}</td>
-                        <td onclick="document.getElementById('form-id').submit();"> ${v.email}</td>
-                        <td onclick="document.getElementById('form-id').submit();"> ${v.pris}</td>
-                        <td onclick="document.getElementById('form-id').submit();"> ${v.status}</td>
+                        <td onclick="document.getElementById('${v.id}').submit();"> ${v.id}</td>
+                        <td onclick="document.getElementById('${v.id}').submit();"> ${v.email}</td>
+                        <td onclick="document.getElementById('${v.id}').submit();"> ${v.pris}</td>
+                        <td onclick="document.getElementById('${v.id}').submit();"> ${v.status}</td>
                 </form>
                 <td>
 
-                    <form action="FrontController" method="post" id="betalings-form">
+
+                    <form action="FrontController" method="post" id="satus${v.id}">
                         <input type="hidden" name="taget" value="updateStatus">
                         <input type="hidden" name="id" value="${v.id}">
                     </form>
-                    <form action="FrontController" method="post" id="Selt-form">
+                    <form action="FrontController" method="post" id="slet${v.id}">
                         <input type="hidden" name="taget" value="sletOrder">
                         <input type="hidden" name="id" value="${v.id}">
                     </form>
                     <div class="text-center">
-                            <button class="btn btn-success mr-1" onclick="document.getElementById('betalings-form').submit();" style="max-width: 49%">Betalt</button>
-                            <button class="btn btn-danger mr-1" onclick="document.getElementById('Selt-form').submit();" type="submit" style="max-width: 49%">Slet</button>
+                            <button class="btn btn-success mr-1" onclick="document.getElementById('satus${v.id}').submit();" style="max-width: 49%">Betalt</button>
+                            <button class="btn btn-danger mr-1" onclick="document.getElementById('slet${v.id}').submit();" type="submit" style="max-width: 49%">Slet</button>
                     </div>
                 </td>
                 </tr>

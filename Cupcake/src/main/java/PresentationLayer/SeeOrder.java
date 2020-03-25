@@ -12,9 +12,7 @@ public class SeeOrder extends Command {
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
         int id = Integer.parseInt(request.getParameter("id"));
-
         HttpSession session = request.getSession();
-
         session.setAttribute("orderlinjer", DataMapper.GetAllOrdersLine(id));
 
         return "OrderLinjer";
