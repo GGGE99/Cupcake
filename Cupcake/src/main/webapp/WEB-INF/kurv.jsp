@@ -76,7 +76,9 @@
     <div class="col-lg-3"></div>
 
 </div>
-
+<div class="text-center">
+    <h3>${requestScope.error}</h3>
+</div>
 <div class="col-lg-3"></div>
 <div class="col-lg-6>">
     <form action="FrontController" method="post">
