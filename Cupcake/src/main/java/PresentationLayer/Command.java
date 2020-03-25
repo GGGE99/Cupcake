@@ -23,6 +23,8 @@ abstract class Command {
         commands.put( "bestil", new Bestil());
         commands.put( "addMoney", new AddMoney());
         commands.put( "seeOrder", new SeeOrder());
+        commands.put( "updateStatus", new UpdateStatus());
+        commands.put( "sletOrder", new SletOrder());
 
     }
 

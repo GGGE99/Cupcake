@@ -65,9 +65,18 @@
                         <td onclick="document.getElementById('form-id').submit();"> ${v.status}</td>
                 </form>
                 <td>
+
+                    <form action="FrontController" method="post" id="betalings-form">
+                        <input type="hidden" name="taget" value="updateStatus">
+                        <input type="hidden" name="id" value="${v.id}">
+                    </form>
+                    <form action="FrontController" method="post" id="Selt-form">
+                        <input type="hidden" name="taget" value="sletOrder">
+                        <input type="hidden" name="id" value="${v.id}">
+                    </form>
                     <div class="text-center">
-                        <button class="btn btn-success mr-1" type="#" style="max-width: 49%">penge</button>
-                        <button class="btn btn-danger mr-1" type="#" style="max-width: 49%">penge</button>
+                            <button class="btn btn-success mr-1" onclick="document.getElementById('betalings-form').submit();" style="max-width: 49%">Betalt</button>
+                            <button class="btn btn-danger mr-1" onclick="document.getElementById('Selt-form').submit();" type="submit" style="max-width: 49%">Slet</button>
                     </div>
                 </td>
                 </tr>
@@ -76,6 +85,7 @@
             </tbody>
         </table>
     </div>
+
 
     <div class="mt-3 col-lg-6">
         <table class="table">

@@ -50,4 +50,40 @@ public class OrderMapper {
             System.out.println(ex);
         }
     }
+
+    public static void updateBetaling(int orderId) throws LoginSampleException {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "UPDATE ordrer SET betalt= !betalt WHERE id=?;";
+            PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
+            ps.setInt(1, orderId);
+            ps.executeUpdate();
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex);
+        }
+    }
+
+    public static void sletOrder(int orderId){
+        try {
+            Connection con = Connector.connection();
+            String SQL = "DELETE FROM cupcake.ordrer WHERE id=?;";
+            PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
+            ps.setInt(1, orderId);
+            ps.executeUpdate();
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex);
+        }
+    }
+
+    public static void sletOrderLine(int orderId){
+        try {
+            Connection con = Connector.connection();
+            String SQL = "DELETE FROM cupcake.cupcakes WHERE order_id=?;";
+            PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
+            ps.setInt(1, orderId);
+            ps.executeUpdate();
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex);
+        }
+    }
 }
