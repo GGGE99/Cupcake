@@ -21,7 +21,7 @@ public class DataMapper {
         try {
             ArrayList<Top> toppings = new ArrayList<>();
             Connection con = Connector.connection();
-            String SQL = "SELECT * FROM cupcake.topings ";
+            String SQL = "SELECT * FROM topings ";
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
 
@@ -41,7 +41,7 @@ public class DataMapper {
     public static ArrayList<Bottom> retrieveBottoms() throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT * FROM cupcake.bottom ";
+            String SQL = "SELECT * FROM bottom ";
             PreparedStatement preparedStatement = con.prepareStatement(SQL);
             ResultSet rs = preparedStatement.executeQuery();
             ArrayList<Bottom> bottoms = new ArrayList<>();

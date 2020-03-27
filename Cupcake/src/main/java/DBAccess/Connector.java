@@ -5,28 +5,42 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- The purpose of Connector is to...
-
- @author kasper
+ * The purpose of Connector is to...
+ *
+ * @author kasper
  */
 public class Connector {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/Cupcake";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "root";
+    private static String URL;
+    private static String USERNAME;
+    private static String PASSWORD;
 
     private static Connection singleton;
 
-    public static void setConnection( Connection con ) {
+    public static void setConnection(Connection con) {
         singleton = con;
     }
 
     public static Connection connection() throws ClassNotFoundException, SQLException {
-        if ( singleton == null ) {
-            Class.forName( "com.mysql.cj.jdbc.Driver" );
-            singleton = DriverManager.getConnection( URL, USERNAME, PASSWORD );
+        if (singleton == null) {
+            setDBCredentials();
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            singleton = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         }
         return singleton;
     }
 
+    public static void setDBCredentials() {
+        String deployed = System.getenv("DEPLOYED");
+
+        if (deployed != null){
+            URL = "jdbc:mysql://localhost:3306/Cupcake";
+            USERNAME = System.getenv("JDBC_USER");
+            PASSWORD = System.getenv("JDBC_PASSWORD");
+        } else {
+            URL = "jdbc:mysql://localhost:3306/Cupcake";
+            USERNAME = "root";
+            PASSWORD = "root";
+        }
+    }
 }

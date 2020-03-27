@@ -20,7 +20,6 @@ public class Bestil extends Command {
         ArrayList<CupcakeOrder> basket = (ArrayList<CupcakeOrder>) session.getAttribute("Basket");
 
         if (role == null) {
-            //todo login
             request.setAttribute("error", "For at bestille skal du logge ind først");
             return "kurv";
         } else {
