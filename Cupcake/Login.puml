@@ -1,0 +1,18 @@
+@startuml
+actor User
+boundary index.jsp
+participant Login
+participant UserMapper
+database Cupcake
+
+User -> index.jsp : username og password
+index.jsp -> Login : Http POST logon
+Login -> UserMapper : Login
+UserMapper -> Cupcake : login()
+Cupcake -> UserMapper : resultset
+UserMapper -> Login : OK
+Login -> index.jsp : forward
+index.jsp -> User : index.jsp viser email
+
+
+@enduml
