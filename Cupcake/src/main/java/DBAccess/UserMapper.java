@@ -37,7 +37,7 @@ public class UserMapper {
     public static User login(String email, String inputPassword) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT id, role, password FROM users WHERE email=?";
+            String SQL = "SELECT id, role, password, money FROM users WHERE email=?";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setString(1, email);
             ResultSet rs = ps.executeQuery();
@@ -45,9 +45,10 @@ public class UserMapper {
                 String role = rs.getString("role");
                 int id = rs.getInt("id");
                 String password = rs.getString("password");
+                double money = rs.getDouble("money");
                 System.out.println(password);
                 if (inputPassword.equals(password)) {
-                    User user = new User(email, password, role, 500);
+                    User user = new User(email, password, role, money);
                     user.setId(id);
                     return user;
                 } else {
