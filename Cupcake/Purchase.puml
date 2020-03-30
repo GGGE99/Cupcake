@@ -1,0 +1,21 @@
+@startuml
+Actor User
+boundary index.jsp
+participant Basket
+boundary kurv.jsp
+participant Bestil
+participant OrderMapper
+database Cupcake
+
+User -> index.jsp : Vælger top, bund og antal
+index.jsp -> Basket : add to new basket
+Basket -> kurv.jsp : execute()
+kurv.jsp -> Bestil : execute()
+Bestil -> OrderMapper : CreateOrder()\nCreateOrderLine(ordre_id)\nUpdateMoney()
+OrderMapper -> Cupcake : executeUpdate
+Cupcake -> OrderMapper : resultSet
+OrderMapper -> Bestil :  CreateOrder(ordre_id)
+Bestil -> index.jsp : Forward
+index.jsp -> User
+
+@enduml
