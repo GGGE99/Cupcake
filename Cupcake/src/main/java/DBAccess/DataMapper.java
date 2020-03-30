@@ -13,7 +13,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
+/**
+ * The purpose of DataMapper is to get data from the database
+ * @return       A connection to the database
+ * @author gruppe 88
+ */
 public class DataMapper {
 
     public static ArrayList<Top> retrieveToppings() throws LoginSampleException {
@@ -62,12 +66,12 @@ public class DataMapper {
     public static ArrayList<OrderLine> GetAllOrdersLine(int orderId) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT ordrer.id, users.email, topings.name as top, bottom.name as bottom, bottom.price + topings.price as pris, cupcakes.antal " +
+            String SQL = "SELECT ordrer.id, users.email, topings.name as top, bottom.name as bottom, bottom.price + topings.price as pris, Cupcakes.antal " +
                     "From((((ordrer " +
                     "Inner join users on ordrer.user_id=users.id) " +
-                    "inner join cupcakes on cupcakes.order_id=ordrer.id) " +
-                    "inner join topings on Cupcakes.top_id=topings.id) " +
-                    "inner join bottom on Cupcakes.bottom_id=bottom.id) where ordrer.id=?";
+                    "inner join Cupcakes on order_id=ordrer.id) " +
+                    "inner join topings on top_id=topings.id) " +
+                    "inner join bottom on bottom_id=bottom.id) where ordrer.id=?";
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setDouble(1, orderId);
             ResultSet rs = ps.executeQuery();

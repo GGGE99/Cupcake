@@ -75,7 +75,8 @@ public class UserMapper {
                 String password = rs.getString("password");
                 String role = rs.getString("role");
                 int money = rs.getInt("money");
-                User user = new User(email, password, role, money);
+                int id = rs.getInt("id");
+                User user = new User(email, password, role, money, id);
                 userList.add(user);
             }
         } catch (ClassNotFoundException | SQLException ex) {

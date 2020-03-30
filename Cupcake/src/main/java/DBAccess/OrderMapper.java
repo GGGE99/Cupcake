@@ -26,7 +26,7 @@ public class OrderMapper {
     public static void createOrdrerLine(int orderId, int top, int bottom, int antal) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "insert into cupcakes Values(?,?,?,?);";
+            String SQL = "insert into Cupcakes Values(?,?,?,?);";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, orderId);
             ps.setInt(2, top);
@@ -66,7 +66,7 @@ public class OrderMapper {
     public static void sletOrder(int orderId){
         try {
             Connection con = Connector.connection();
-            String SQL = "DELETE FROM cupcake.ordrer WHERE id=?;";
+            String SQL = "DELETE FROM Cupcake.ordrer WHERE id=?;";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, orderId);
             ps.executeUpdate();
@@ -78,7 +78,7 @@ public class OrderMapper {
     public static void sletOrderLine(int orderId){
         try {
             Connection con = Connector.connection();
-            String SQL = "DELETE FROM cupcake.cupcakes WHERE order_id=?;";
+            String SQL = "DELETE FROM Cupcake.cupcakes WHERE order_id=?;";
             PreparedStatement ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, orderId);
             ps.executeUpdate();

@@ -12,8 +12,16 @@ public class User {
         this.password = password;
         this.role = role;
         this.money = money;
-
     }
+
+    public User(String email, String password, String role, double money, int id) {
+        this.email = email;
+        this.password = password;
+        this.role = role;
+        this.money = money;
+        this.id = id;
+    }
+
 
     private int id; // just used to demo retrieval of autogen keys in UserMapper
     private String email;

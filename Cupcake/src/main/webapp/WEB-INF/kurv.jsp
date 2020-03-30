@@ -41,8 +41,7 @@
                     <th scope="row">${Count.index}</th>
                     <td>${DataMapper.retrieveToppings().get(i.top - 1).getName()}</td>
                     <td>${DataMapper.retrieveBottoms().get(i.bottom - 1).getName()}</td>
-                    <td><input class="form-control number-input" type="number" value="${i.antal}"
-                               id="example-number-input" name="number"></td>
+                    <td>${i.antal}</td>
                     <td>
                             ${(DataMapper.retrieveToppings().get(i.top - 1).getPrice() + DataMapper.retrieveBottoms().get(i.bottom - 1).getPrice()) * i.antal}
                     </td>
