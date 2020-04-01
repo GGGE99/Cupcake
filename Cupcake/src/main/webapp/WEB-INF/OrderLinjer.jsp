@@ -13,7 +13,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="PresentationLayer.Basket" %>
 
-<%@include file="/Includes/Headers1.inc" %>
 <%@include file="/Includes/Headers.inc" %>
 
 <div class="row">

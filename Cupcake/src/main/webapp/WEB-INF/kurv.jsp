@@ -12,9 +12,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-
-<%@include file="/Includes/Headers1.inc" %>
-<link rel="stylesheet" href="../Styles/kurv.css">
 <%@include file="/Includes/Headers.inc" %>
 
 <div class="text-center mb-4">
