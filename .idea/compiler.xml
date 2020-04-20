@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="prejektSkabelon" options="-endorseddirs C:\Users\Lasse\Documents\Projekt\Cupcake\Cupcake\target/endorsed" />
+      <module name="prejektSkabelon" options="-endorseddirs &quot;C:\Users\marcg\Desktop\Skole\Cupcake - Copy\Cupcake\target/endorsed&quot;" />
     </option>
   </component>
 </project>

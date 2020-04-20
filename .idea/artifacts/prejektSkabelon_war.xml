@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="prejektSkabelon-1.0-SNAPSHOT.war">
+    <root id="archive" name="cupcake-1.0.war">
       <element id="artifact" artifact-name="prejektSkabelon:war exploded" />
     </root>
   </artifact>
